@@ -7,20 +7,20 @@ def main():
     #     linha = list(map(int, input(f"Digite a linha {i+1}: ").split()))
     #     matrix.append(linha)
 
-    matrix = [
-        [0,0,1,1,1],
-        [0,0,0,0,1],
-        [0,1,0,1,0],
-        [0,1,0,0,0],
-        [1,1,1,0,0]
-    ]
-
     # matrix = [
-    #     [0,1,1,1],
-    #     [1,0,0,0],
-    #     [0,1,0,1],
-    #     [1,1,0,0]
+    #     [0,0,1,1,1],
+    #     [0,0,0,0,1],
+    #     [0,1,0,1,0],
+    #     [0,1,0,0,0],
+    #     [1,1,1,0,0]
     # ]
+
+    matrix = [
+        [0,1,1,1],
+        [1,0,0,0],
+        [0,1,0,1],
+        [1,1,0,0]
+    ]
 
     n = len(matrix) #Quantidade de paginas
 
@@ -45,7 +45,6 @@ def main():
             for j in range(n):
                 if matrix[j][i] > 0:
                     suporte_vet[i] += page_rank[j] * matrix[j][i]
-            #suporte_vet[i] = round(suporte_vet[i],precisao)
         
         print(f"{page_rank} , {suporte_vet}")
         count+=1

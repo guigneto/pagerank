@@ -7,20 +7,20 @@ def main():
     #     linha = list(map(int, input(f"Digite a linha {i+1}: ").split()))
     #     matrix.append(linha)
 
-    matrix = [
-        [0,0,1,1,1],
-        [0,0,0,0,1],
-        [0,1,0,1,0],
-        [0,1,0,0,0],
-        [1,1,1,0,0]
-    ]
-
     # matrix = [
-    #     [0,1,1,1],
-    #     [1,0,0,0],
-    #     [0,1,0,1],
-    #     [1,1,0,0]
+    #     [0,0,1,1,1],
+    #     [0,0,0,0,1],
+    #     [0,1,0,1,0],
+    #     [0,1,0,0,0],
+    #     [1,1,1,0,0]
     # ]
+
+    matrix = [
+        [0,1,1,1],
+        [1,0,0,0],
+        [0,1,0,1],
+        [1,1,0,0]
+    ]
 
     n = len(matrix) #Quantidade de paginas
 
@@ -32,7 +32,7 @@ def main():
                 matrix[i][j] = 1/row_sum
 
     # Atualiza page_rank até estabilizar
-    precisao = 18  #1 = 4, 2 = 18
+    precisao = 3  #1 = 4, 2 = 18
     page_rank = [1/n] * n
     suporte_vet = [0] * n
     count = 0
